@@ -1,3 +1,7 @@
+export const config = {
+  runtime: 'experimental-edge',
+}
+
 export const getServerSideProps = async ({ locale }) => {
   return {
     props: {
@@ -7,5 +11,5 @@ export const getServerSideProps = async ({ locale }) => {
 };
 
 export default function Dynamic({ locale }) {
-  return <div>Locale: {locale}</div>;
+  return <div>Locale: {locale}, reload and the locale will always be 'default'</div>;
 }

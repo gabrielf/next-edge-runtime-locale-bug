@@ -1,5 +1,9 @@
 import Link from "next/link";
 
+export const config = {
+  runtime: 'experimental-edge',
+}
+
 export const getServerSideProps = async ({ locale }) => {
   return {
     props: {
@@ -17,7 +21,7 @@ export default function Home({ locale }) {
         gap: "20px",
       }}
     >
-      <p>Current locale: {locale}</p>
+      <p>Current locale: {locale}, reload and the locale will always be 'default'</p>
       Locale switch:
       <Link href="/" locale="default">
         Default
@@ -30,8 +34,9 @@ export default function Home({ locale }) {
       </Link>
       <br />
       Test links:
-      <Link href="/dynamic/1">Dynamic 1</Link>
-      <Link href="/static">Static</Link>
+      <Link href="/dynamic/1">Dynamic route 1</Link>
+      <Link href="/static">Static route</Link>
+      <Link href="/unaffected">Static route (unaffected)</Link>
     </main>
   );
 }

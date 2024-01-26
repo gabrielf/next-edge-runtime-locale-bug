@@ -11,5 +11,5 @@ export const getServerSideProps = async ({ locale }) => {
 };
 
 export default function Static({ locale }) {
-  return <div>Locale: {locale}, reload and the locale will always be 'default'</div>;
+  return <div>Locale: {locale}, this route is not matched by the middleware so the locale is correct even after page reload</div>;
 }
